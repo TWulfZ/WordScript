@@ -1,4 +1,4 @@
-import { create } from 'zustand';
+import { create } from "zustand";
 
 export interface Column {
   name: string;
@@ -23,6 +23,20 @@ export const useConfigStore = create<ConfigState>((set) => ({
     savePDF: false,
     mergePDFs: false,
   },
-  setColumns: (columns) => set((state) => ({ ...state, columns: columns})),
-  setOptions: (options) => set((state) => ({ ...state, options: options})),
+  setColumns: (columns) => set((state) => ({ ...state, columns: columns })),
+  setOptions: (options) => set((state) => ({ ...state, options: options })),
+}));
+
+interface DataState {
+  csvData: string[][];
+  fileName: string;
+  setCsvData: (csvData: string[][]) => void;
+  setFileName: (fileName: string) => void;
+}
+
+export const useDataStore = create<DataState>((set) => ({
+  csvData: [],
+  fileName: "",
+  setCsvData: (csvData) => set((state) => ({ ...state, csvData })),
+  setFileName: (fileName) => set((state) => ({ ...state, fileName })),
 }));
