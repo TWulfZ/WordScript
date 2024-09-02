@@ -14,7 +14,7 @@ export default function Info({title, children, className }: InfoProps) {
         <HoverCardTrigger asChild>
           <InfoIcon className="h-5 w-5 text-muted-foreground cursor-help" />
         </HoverCardTrigger>
-        <HoverCardContent className="w-[420px]">
+        <HoverCardContent className="w-[420px] mx-4">
           <div className="space-y-2">
             <h4 className="text-sm font-semibold">{title}</h4>
             <p className="text-sm text-muted-foreground">

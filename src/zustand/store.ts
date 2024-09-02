@@ -40,3 +40,13 @@ export const useDataStore = create<DataState>((set) => ({
   setCsvData: (csvData) => set((state) => ({ ...state, csvData })),
   setFileName: (fileName) => set((state) => ({ ...state, fileName })),
 }));
+
+interface SessionState {
+  selectedColumn: Column | null;
+  setSelectedColumn: (selectedColumn: Column | null) => void;
+}
+
+export const useSessionStore = create<SessionState>((set) => ({
+  selectedColumn: null,
+  setSelectedColumn: (selectedColumn) => set((state) => ({ ...state, selectedColumn })),
+}));
